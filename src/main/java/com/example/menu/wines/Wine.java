@@ -9,6 +9,7 @@ import lombok.AllArgsConstructor;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
+import com.example.menu.wines.WineRequestDTO;
 
 @Table(name = "wines")
 @Entity(name = "wines")
@@ -25,5 +26,11 @@ public class Wine {
     private String image;
 
     private Integer price;
+
+    public Wine(WineRequestDTO data){
+        this.image = data.image();
+        this.price = data.price();
+        this.title = data.title();
+    }
 }
 
